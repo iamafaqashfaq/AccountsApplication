@@ -1,0 +1,109 @@
+﻿<Window x:Class="AccountsApplication.Views.Dealers.Dealers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountsApplication.Views.Dealers"
+        mc:Ignorable="d"
+        Title="Dealers" Height="450" Width="800" Loaded="Window_Loaded">
+    <Grid>
+        <Label Content="Short Name" HorizontalAlignment="Left" Margin="53,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company Fullname" HorizontalAlignment="Left" Margin="53,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Representative Phone #" HorizontalAlignment="Left" Margin="305,161,0,0" VerticalAlignment="Top" Width="142"/>
+        <Label Content="Representative Name" HorizontalAlignment="Left" Margin="328,33,0,0" VerticalAlignment="Top"/>
+        <Label Content="Distribution" HorizontalAlignment="Left" Margin="628,36,0,0" VerticalAlignment="Top"/>
+        <Label Content="Reseller" HorizontalAlignment="Left" Margin="634,95,0,0" VerticalAlignment="Top"/>
+        <Label Content="Tel #" HorizontalAlignment="Left" Margin="57,126,0,0" VerticalAlignment="Top"/>
+        <Label Content="Company Address" HorizontalAlignment="Left" Margin="328,64,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phone #" HorizontalAlignment="Left" Margin="53,95,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="shortName" HorizontalAlignment="Left" Height="23" Margin="165,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"></Setter>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="companyName" HorizontalAlignment="Left" Height="23" Margin="165,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="companyPhone" HorizontalAlignment="Left" Height="23" Margin="165,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="companyTel" HorizontalAlignment="Left" Height="23" Margin="165,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="repName" HorizontalAlignment="Left" Height="23" Margin="452,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="companyAddress" HorizontalAlignment="Left" Height="85" Margin="452,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <TextBox x:Name="repPhone" HorizontalAlignment="Left" Height="23" Margin="452,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
+        <RadioButton x:Name="resellerYes" GroupName="Reseller" Content="Yes" HorizontalAlignment="Left" Margin="634,126,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="resellerNo" GroupName="Reseller" Content="No" HorizontalAlignment="Left" Margin="675,126,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="distYes" GroupName="Distribution" Content="Yes" HorizontalAlignment="Left" Margin="634,67,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="distNo" GroupName="Distribution" Content="No" HorizontalAlignment="Left" Margin="675,67,0,0" VerticalAlignment="Top"/>
+        <DataGrid x:Name="dealersGridView" Margin="10,197,10,10" EnableRowVirtualization="False" CanUserDeleteRows="False" CanUserResizeRows="False"/>
+        <Menu Height="33" VerticalAlignment="Top">
+            <Button x:Name="SaveBtn" Width="31" Height="28" Click="SaveBtn_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/saveicon.png" Stretch="Uniform"></ImageBrush>
+                </Button.Background>
+                <Button.Content>
+                    <Image Source="/Resources/saveicon.png" Stretch="Uniform" Height="auto" Width="auto"/>
+                </Button.Content>
+            </Button>
+            <Button x:Name="DelBtn" Width="31" Height="28" Click="DelBtn_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <ImageBrush ImageSource="/AccountsApplication;component/Resources/deleteicon.png" Stretch="Uniform"/>
+                </Button.Background>
+                <Image Source="/AccountsApplication;component/Resources/deleteicon.png" Stretch="Uniform" Height="auto" Width="auto"/>
+            </Button>
+            <Button x:Name="clearBtn" Width="31" Height="28" Click="clearBtn_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Style>
+                </Button.Resources>
+                <Button.Background>
+                    <ImageBrush ImageSource="/AccountsApplication;component/Resources/clearicon.png" Stretch="Uniform"/>
+                </Button.Background>
+                <Image Source="/AccountsApplication;component/Resources/clearicon.png" Stretch="Uniform" Height="auto" Width="auto"/>
+            </Button>
+        </Menu>
+
+    </Grid>
+</Window>

@@ -1,0 +1,28 @@
+﻿<Window x:Class="AccountsApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AccountsApplication"
+        mc:Ignorable="d"
+        Title="Login" Height="211.434" Width="361.226" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label Content="Username" HorizontalAlignment="Left" Margin="63,46,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="63,77,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="userText" HorizontalAlignment="Left" Height="23" Margin="164,49,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2">
+        </TextBox>
+        <PasswordBox x:Name="passwordText" HorizontalAlignment="Left" Height="23" Margin="164,80,0,0" VerticalAlignment="Top" Width="120" Grid.ColumnSpan="2" PasswordChar="*">
+        </PasswordBox>
+        <Button Content="Login" HorizontalAlignment="Left" Margin="209,123,0,0" VerticalAlignment="Top" Width="75" Height="29" Grid.ColumnSpan="2" Click="Button_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>
