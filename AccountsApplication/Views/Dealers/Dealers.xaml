@@ -70,40 +70,19 @@
         <RadioButton x:Name="distYes" GroupName="Distribution" Content="Yes" HorizontalAlignment="Left" Margin="634,67,0,0" VerticalAlignment="Top"/>
         <RadioButton x:Name="distNo" GroupName="Distribution" Content="No" HorizontalAlignment="Left" Margin="675,67,0,0" VerticalAlignment="Top"/>
         <DataGrid x:Name="dealersGridView" Margin="10,197,10,10" EnableRowVirtualization="False" CanUserDeleteRows="False" CanUserResizeRows="False"/>
-        <Menu Height="33" VerticalAlignment="Top">
-            <Button x:Name="SaveBtn" Width="31" Height="28" Click="SaveBtn_Click">
-                <Button.Background>
-                    <ImageBrush ImageSource="/Resources/saveicon.png" Stretch="Uniform"></ImageBrush>
-                </Button.Background>
-                <Button.Content>
-                    <Image Source="/Resources/saveicon.png" Stretch="Uniform" Height="auto" Width="auto"/>
-                </Button.Content>
-            </Button>
-            <Button x:Name="DelBtn" Width="31" Height="28" Click="DelBtn_Click">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="BorderBrush" Value="Transparent"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Background>
-                    <ImageBrush ImageSource="/AccountsApplication;component/Resources/deleteicon.png" Stretch="Uniform"/>
-                </Button.Background>
-                <Image Source="/AccountsApplication;component/Resources/deleteicon.png" Stretch="Uniform" Height="auto" Width="auto"/>
-            </Button>
-            <Button x:Name="clearBtn" Width="31" Height="28" Click="clearBtn_Click">
-                <Button.Resources>
-                    <Style TargetType="{x:Type Border}">
-                        <Setter Property="BorderThickness" Value="0"/>
-                        <Setter Property="BorderBrush" Value="Transparent"/>
-                    </Style>
-                </Button.Resources>
-                <Button.Background>
-                    <ImageBrush ImageSource="/AccountsApplication;component/Resources/clearicon.png" Stretch="Uniform"/>
-                </Button.Background>
-                <Image Source="/AccountsApplication;component/Resources/clearicon.png" Stretch="Uniform" Height="auto" Width="auto"/>
-            </Button>
+        <Menu Height="28" VerticalAlignment="Top">
+            <Image x:Name="SaveBtn" Source="/Resources/saveicon.png" MouseDown="SaveBtn_Click" Height="23"/>
+            <Image x:Name="DelBtn" Source="/Resources/deleteicon.png" MouseDown="DelBtn_Click" Height="23" RenderTransformOrigin="-0.907,0.45"/>
+            <Image x:Name="clearBtn" Source="/Resources/clearicon.png" MouseDown="clearBtn_Click" Height="23"/>
         </Menu>
+        <Label Content="Search" HorizontalAlignment="Left" Margin="10,161,0,0" VerticalAlignment="Top" Width="48"/>
+        <TextBox x:Name="searchText" HorizontalAlignment="Left" Height="23" Margin="63,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" TextChanged="searchText_TextChanged">
+            <TextBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </TextBox.Resources>
+        </TextBox>
 
     </Grid>
 </Window>

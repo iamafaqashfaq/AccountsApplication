@@ -5,91 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AccountsApplication.Views"
         mc:Ignorable="d"
-        Title="Main Menu" Height="450" Width="800">
-    <Grid>
+        Title="Main Menu" Height="450" Width="696.875">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="337*"/>
-            <ColumnDefinition Width="455*"/>
         </Grid.ColumnDefinitions>
-        <Button Content="Dealers" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="146" Height="46" Click="Button_Click">
+        <Button HorizontalAlignment="Left" Margin="10,148,0,0" VerticalAlignment="Top" Width="221" Height="91" Click="Button_Click" FontWeight="Bold" FontSize="20" BorderThickness="2,3" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}">
             <Button.Resources>
                 <Style TargetType="Border">
-                    <Setter Property="CornerRadius" Value="20"></Setter>
+                    <Setter Property="CornerRadius" Value="40"></Setter>
                 </Style>
             </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"></ImageBrush>
-            </Button.Background>
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image HorizontalAlignment="Left" Source="/AccountsApplication;component/Resources/dealer.png" Stretch="Uniform"></Image>
+                    <TextBlock VerticalAlignment="Center" Margin="20,0,0,0" FontFamily="Arial Rounded MT Bold">Dealers</TextBlock>
+                </StackPanel>
+            </Button.Content>
         </Button>
-        <Button Content="Products" HorizontalAlignment="Left" Margin="10,70,0,0" VerticalAlignment="Top" Width="146" Height="46" Click="Button_Click">
+        <Button HorizontalAlignment="Left" Margin="236,148,0,0" VerticalAlignment="Top" Width="221" Height="88" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" BorderThickness="2,3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
+                    <Setter Property="CornerRadius" Value="40"/>
                 </Style>
             </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image HorizontalAlignment="Left" Source="/AccountsApplication;component/Resources/products.png" Stretch="Uniform"></Image>
+                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  Margin="20,0,0,0" FontFamily="Arial Rounded MT Bold">Products</TextBlock>
+                </StackPanel>
+            </Button.Content>
         </Button>
-        <Button Content="Stocks" HorizontalAlignment="Left" Margin="10,131,0,0" VerticalAlignment="Top" Width="146" Height="46" Click="Button_Click">
+        <Button HorizontalAlignment="Left" Margin="462,148,0,0" VerticalAlignment="Top" Width="221" Height="88" Click="Button_Click" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" BorderThickness="2,3">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
+                    <Setter Property="CornerRadius" Value="40"/>
                 </Style>
             </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image HorizontalAlignment="Left" Source="/AccountsApplication;component/Resources/stocks.png" Stretch="Uniform"></Image>
+                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  Margin="20,0,20,0" FontFamily="Arial Rounded MT Bold">Stocks</TextBlock>
+                </StackPanel>
+            </Button.Content>
         </Button>
-        <Button Content="Sale" HorizontalAlignment="Left" Margin="10,190,0,0" VerticalAlignment="Top" Width="146" Height="46" Click="Button_Click">
+        <Button Margin="10,0,458,87" Click="Button_Click" Height="88" VerticalAlignment="Bottom" Background="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" BorderThickness="2,3" FontSize="20" FontWeight="Bold" FontFamily="Arial Rounded MT Bold">
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
+                    <Setter Property="CornerRadius" Value="40"/>
                 </Style>
             </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Refund" HorizontalAlignment="Left" Margin="10,251,0,0" VerticalAlignment="Top" Width="146" Height="46" Click="Button_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Reports" HorizontalAlignment="Left" Margin="10,311,0,0" VerticalAlignment="Top" Width="146" Height="46" Click="Button_Click">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Accounts Receivable" HorizontalAlignment="Left" Margin="181,10,0,0" VerticalAlignment="Top" Width="226" Height="46" Click="Button_Click" Grid.ColumnSpan="2">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
-        </Button>
-        <Button Content="Accounts Payables" HorizontalAlignment="Left" Margin="181,70,0,0" VerticalAlignment="Top" Width="226" Height="46" Click="Button_Click" Grid.ColumnSpan="2">
-            <Button.Resources>
-                <Style TargetType="{x:Type Border}">
-                    <Setter Property="CornerRadius" Value="20"/>
-                </Style>
-            </Button.Resources>
-            <Button.Background>
-                <ImageBrush ImageSource="/AccountsApplication;component/Resources/categories.png" Stretch="Uniform" AlignmentX="Left"/>
-            </Button.Background>
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image HorizontalAlignment="Left" Source="/AccountsApplication;component/Resources/reportsicon.png" Stretch="Uniform"></Image>
+                    <TextBlock VerticalAlignment="Center" FontSize="20" FontWeight="Bold"  Margin="20,0,20,0" FontFamily="Arial Rounded MT Bold">Reports</TextBlock>
+                </StackPanel>
+            </Button.Content>
         </Button>
 
     </Grid>

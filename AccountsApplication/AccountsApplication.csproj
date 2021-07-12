@@ -152,6 +152,18 @@
   <ItemGroup>
     <Resource Include="Resources\clearicon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\dealer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\stocks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\reportsicon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

@@ -64,6 +64,7 @@ namespace AccountsApplication.Views.Dealers
 
                 context.Dealers.Add(dealer);
                 await context.SaveChangesAsync();
+                clearFields();
                 fetchDataToGridView();
             }
         }
@@ -97,6 +98,11 @@ namespace AccountsApplication.Views.Dealers
 
         private void clearBtn_Click(object sender, RoutedEventArgs e)
         {
+            clearFields();
+        }
+
+        private void clearFields()
+        {
             shortName.Clear();
             companyName.Clear();
             companyAddress.Clear();
@@ -105,7 +111,19 @@ namespace AccountsApplication.Views.Dealers
             repName.Clear();
             repPhone.Clear();
             distYes.IsChecked = false;
-            resellerYes.IsChecked =false;
+            resellerYes.IsChecked = false;
+        }
+        private async void searchText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            using (var context = new AppContext())
+            {
+                var data = await context.Dealers.Where(u => u.ShortName.Contains(searchText.Text) ||
+                    u.CompanyFullName.Contains(searchText.Text) ||
+                    u.CompanyPhoneNo.Contains(searchText.Text) || u.RepresentativeName.Contains(searchText.Text) || u.RepresentativePhoneNo.Contains(searchText.Text)).ToListAsync();
+                dealersGridView.ItemsSource = data;
+                dealersGridView.CanUserAddRows = false;
+                dealersGridView.Columns[0].Visibility = Visibility.Hidden;
+            }
         }
     }
 }
